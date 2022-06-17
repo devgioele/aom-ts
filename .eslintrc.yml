@@ -1,0 +1,92 @@
+env:
+  browser: true
+  es2021: true
+  jest: true
+extends:
+  - eslint:recommended
+  - plugin:react/recommended
+  - plugin:react/jsx-runtime
+  - prettier
+parser: '@typescript-eslint/parser'
+parserOptions:
+  ecmaFeatures:
+    jsx: true
+    arrowFunctions: true
+  ecmaVersion: 12
+  project: './tsconfig.json'
+ignorePatterns:
+  # Configuration files in the root directory
+  - '*.js'
+  - '*.ts'
+plugins:
+  - '@typescript-eslint'
+  - import
+  - react
+  - react-hooks
+  - prettier
+# Settings shared across all rules
+settings:
+  import/resolver:
+    node:
+      extensions:
+        - .js
+        - .jsx
+        - .ts
+        - .tsx
+      moduleDirectory:
+        - node_modules
+        - src
+  react:
+    version: detect
+# Rule adjustments (off|warn|error)
+rules:
+  no-undef:
+    - off
+  react/prop-types:
+    - off
+  no-underscore-dangle:
+    - off
+  no-restricted-syntax:
+    - off
+  react-hooks/exhaustive-deps:
+    - warn
+  react/react-in-jsx-scope:
+    - off
+  consistent-return:
+    - error
+  react/jsx-key:
+    - warn
+  curly:
+    - warn
+    - all
+  import/no-cycle:
+    - warn
+  jsx-a11y/control-has-associated-label:
+    - off
+  jsx-a11y/anchor-has-content:
+    - off
+  # No prop-types library
+  react/require-default-props:
+    - off
+  no-param-reassign:
+    - error
+    # Whether the properties of parameters cannot be changed
+    - props: false
+  # Allow `export { default } from`
+  no-restricted-exports:
+    - off
+  react/jsx-props-no-spreading:
+    - off
+  no-console:
+    - warn
+  '@typescript-eslint/consistent-type-imports': 
+    - error
+  '@typescript-eslint/no-unused-vars':
+    - warn
+    - argsIgnorePattern: '^_'
+      varsIgnorePattern: '^_'
+      destructuredArrayIgnorePattern: '^_'
+      ignoreRestSiblings: true
+  '@typescript-eslint/explicit-function-return-type':
+    - error
+    - allowExpressions: true
