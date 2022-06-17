@@ -39,6 +39,8 @@
     "vite": "^2.9.9"
   },
   "dependencies": {
+    "@headlessui/react": "^1.6.4",
+    "@heroicons/react": "^1.0.6",
     "react-hot-toast": "^2.2.0"
   }
 }

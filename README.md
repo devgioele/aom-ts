@@ -14,6 +14,37 @@ Each property has a property type, which depends on the type of the entity.
 
 This enables the application model to be changed without changing the source code.
 
-## UX
+## GUI
 
-This web app demonstrates AOM by allowing the user to create product types (entity types) and products (entities). This proofs that the products and their property types are **not** predefined.
+This web app demonstrates AOM by dynamically generating a form based on the entity type. 
+Change the source code and see how the form adapts to it!
+
+## Getting started
+
+Install [Node.js](https://nodejs.org/) 16.10 or higher.
+
+Clone this repo:
+```sh
+git clone https://github.com/devgioele/aom-ts.git
+```
+
+Inside your local copy of the repo...
+
+Enable corepack:
+```sh
+corepack enable
+```
+
+Install dependencies:
+```sh
+yarn
+```
+
+Start local server:
+```sh
+yarn dev
+```
+
+Visit the page at [http://localhost:3000](http://localhost:3000)
+
+Make changes in the source code and see the result immediately, without having to restart the web server.

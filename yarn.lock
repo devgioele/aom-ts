@@ -481,6 +481,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@headlessui/react@npm:^1.6.4":
+  version: 1.6.4
+  resolution: "@headlessui/react@npm:1.6.4"
+  peerDependencies:
+    react: ^16 || ^17 || ^18
+    react-dom: ^16 || ^17 || ^18
+  checksum: f24dd2f5bd4de5954b2fd40998627b58a650a874894a90f96320ae5bad1b961a140e85ce821b92dc8cbed0628523df57ae9533137467d867788eac907bd396d7
+  languageName: node
+  linkType: hard
+
+"@heroicons/react@npm:^1.0.6":
+  version: 1.0.6
+  resolution: "@heroicons/react@npm:1.0.6"
+  peerDependencies:
+    react: ">= 16"
+  checksum: 372b1eda3ce735ef069777bc96304f70de585ebb71a6d1cedc121bb695f9bca235619112e3ee14e8779e95a03096813cbbe3b755927a54b7580d1ce084fa4096
+  languageName: node
+  linkType: hard
+
 "@humanwhocodes/config-array@npm:^0.9.2":
   version: 0.9.5
   resolution: "@humanwhocodes/config-array@npm:0.9.5"
@@ -1526,6 +1545,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "aom-ts@workspace:."
   dependencies:
+    "@headlessui/react": ^1.6.4
+    "@heroicons/react": ^1.0.6
     "@swc/core": ^1.2.203
     "@swc/jest": ^0.2.21
     "@types/jest": ^28.1.2

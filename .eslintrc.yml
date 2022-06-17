@@ -87,6 +87,3 @@ rules:
       varsIgnorePattern: '^_'
       destructuredArrayIgnorePattern: '^_'
       ignoreRestSiblings: true
-  '@typescript-eslint/explicit-function-return-type':
-    - error
-    - allowExpressions: true
