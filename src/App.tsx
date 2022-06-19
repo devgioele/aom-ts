@@ -1,17 +1,16 @@
 import Footer from './Footer'
 import Header from './Header'
 import SimpleButton from './SimpleButton'
-import PropertiesForm from './form/PropertiesForm'
-import { Product, tShirt } from './model'
-
-const product: Product = {
-  type: tShirt,
-  properties: [],
-}
+import ProductForm from './form/ProductForm'
+import toast from 'react-hot-toast'
+import { tShirt } from './aom/repo'
 
 const App: React.FC = () => {
-  const handleCreateProduct = () => {
-    // TODO
+  const handlePrintProduct = () => {
+    const msg = `Product = ${tShirt.toString()}`
+    // eslint-disable-next-line no-console
+    console.log(msg)
+    toast.success(msg)
   }
 
   return (
@@ -19,12 +18,12 @@ const App: React.FC = () => {
       <Header />
       <main className="relative flex-auto p-10 bg-slate-300 text-black">
         <div className="flex flex-col">
-          <PropertiesForm entityName="Product" />
+          <ProductForm product={tShirt} />
         </div>
         <SimpleButton
-          text="Create product"
+          text="Print product"
           className="bg-green-600 hover:bg-green-800 text-white absolute m-10 bottom-0 right-0"
-          onClick={handleCreateProduct}
+          onClick={handlePrintProduct}
         />
       </main>
       <Footer />

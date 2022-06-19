@@ -1,3 +1,5 @@
+import { Dictionary } from '../utils'
+
 class TypeNotFoundError extends TypeError {
   constructor(name: string) {
     super(`The property '${name}' does not exist.`)
@@ -14,7 +16,7 @@ class TypeMismatchError extends TypeError {
   because `typeof null` erroneously returns `object` instead of `null`, making it undistinguishable from `object`.
   This is a known bug of JS that has not been removed to maintain backwards-compatibility.
   */
-type Primitive =
+export type Primitive =
   | 'string'
   | 'number'
   | 'bigint'
@@ -52,6 +54,16 @@ export class Product {
     }
     return this
   }
+
+  toString(): string {
+    // Construct a flat object
+    const flatObj: Dictionary = {}
+    for (const prop of this.properties) {
+      flatObj[prop.type.name] = prop.getValue()
+    }
+    // Use the vanilla stringify algorithm
+    return JSON.stringify(flatObj, null, 2)
+  }
 }
 
 export class ProductType {
@@ -73,8 +85,9 @@ export class ProductType {
   private findPropertyType = (name: string) =>
     this.propertyTypes.find((propType) => propType.name === name)
 
-  addPropertyType(propType: ProductPropertyType) {
+  addPropertyType(propType: ProductPropertyType): ProductType {
     this.propertyTypes.push(propType)
+    return this
   }
 }
 
