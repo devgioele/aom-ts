@@ -79,7 +79,7 @@ rules:
     - off
   no-console:
     - warn
-  '@typescript-eslint/consistent-type-imports': 
+  '@typescript-eslint/consistent-type-imports':
     - error
   no-unused-vars:
     - off
