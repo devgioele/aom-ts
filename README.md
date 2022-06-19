@@ -16,8 +16,8 @@ This enables the application model to be changed without changing the source cod
 
 ## GUI
 
-This web app demonstrates AOM by dynamically generating a form based on the entity type. 
-Change the source code and see how the form adapts to it!
+This web app demonstrates AOM by dynamically generating a form based on the product type (entity type).
+If the product type changes, the form automatically adapts!
 
 ## Getting started
 
