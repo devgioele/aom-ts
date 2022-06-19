@@ -19,11 +19,16 @@ This enables the application model to be changed without changing the source cod
 This web app demonstrates AOM by dynamically generating a form based on the product type (entity type).
 If the product type changes, the form automatically adapts!
 
+_Compromises made to keep the scope of the app simple:_
+
+- The implemented AOM supports all possible types, but the user can only enter values of type `string`, `number` or `boolean`
+
 ## Getting started
 
 Install [Node.js](https://nodejs.org/) 16.10 or higher.
 
 Clone this repo:
+
 ```sh
 git clone https://github.com/devgioele/aom-ts.git
 ```
@@ -31,16 +36,19 @@ git clone https://github.com/devgioele/aom-ts.git
 Inside your local copy of the repo...
 
 Enable corepack:
+
 ```sh
 corepack enable
 ```
 
 Install dependencies:
+
 ```sh
 yarn
 ```
 
 Start local server:
+
 ```sh
 yarn dev
 ```
@@ -48,3 +56,12 @@ yarn dev
 Visit the page at [http://localhost:3000](http://localhost:3000)
 
 Make changes in the source code and see the result immediately, without having to restart the web server.
+
+### Most interesting files
+
+Files related to AOM can be found in the directory `aom`.
+
+Code responsible for the form generation and the parsing of values can be found in:
+- `App.tsx`
+- `form/**/*`
+- `utils.tsx`
